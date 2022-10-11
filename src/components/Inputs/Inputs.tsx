@@ -1,5 +1,5 @@
 import { InputsFormType } from '../../interfaces/interfaces';
-import { FORMACTIONS } from '../../store/actions';
+import { ACTIONS } from '../../store/actions';
 import DateInput from './DateInput/DateInput';
 
 const Inputs = ({ dispatch, formData, agencies, setSuccessful }: InputsFormType) => (
@@ -8,7 +8,7 @@ const Inputs = ({ dispatch, formData, agencies, setSuccessful }: InputsFormType)
                 <label>Starting Date</label>
                 <br />
                 <DateInput
-                    formActions={FORMACTIONS.SET_START_DATE}
+                    formActions={ACTIONS.SET_START_DATE}
                     dispatch={dispatch}
                     value={formData.windowStart.split('T')[0]}
                     payloadValue="windowStart"
@@ -18,7 +18,7 @@ const Inputs = ({ dispatch, formData, agencies, setSuccessful }: InputsFormType)
                 <label>Ending Date</label>
                 <br />
                 <DateInput
-                    formActions={FORMACTIONS.SET_END_DATE}
+                    formActions={ACTIONS.SET_END_DATE}
                     dispatch={dispatch}
                     value={formData.windowEnd.split('T')[0]}
                     payloadValue="windowEnd"
@@ -28,7 +28,7 @@ const Inputs = ({ dispatch, formData, agencies, setSuccessful }: InputsFormType)
                 value={formData.agency}
                 onChange={(e) =>
                     dispatch({
-                        type: FORMACTIONS.SET_AGENCY,
+                        type: ACTIONS.SET_AGENCY,
                         payload: { agency: e.target.value },
                     })
                 }

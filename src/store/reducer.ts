@@ -1,8 +1,8 @@
 import { formDataType } from '../interfaces/interfaces';
-import { FORMACTIONS, FORMACTIONSENUM } from './actions';
+import { ACTIONS, ACTIONSENUM } from './actions';
 
 interface formAction {
-  type: FORMACTIONSENUM;
+  type: ACTIONSENUM;
   payload: formDataType;
 }
 
@@ -11,13 +11,13 @@ export default function reducer(
   action: formAction
 ) {
   switch (action.type) {
-    case FORMACTIONS.SET_START_DATE:
+    case ACTIONS.SET_START_DATE:
       return { ...formData, windowStart: action.payload.windowStart };
-    case FORMACTIONS.SET_END_DATE:
+    case ACTIONS.SET_END_DATE:
       return { ...formData, windowEnd: action.payload.windowEnd };
-    case FORMACTIONS.SET_ONLY_SUCCESS:
+    case ACTIONS.SET_ONLY_SUCCESS:
       return { ...formData, status: action.payload.status };
-    case FORMACTIONS.SET_AGENCY: {
+    case ACTIONS.SET_AGENCY: {
       if (action.payload.agency === 'all') {
         return { ...formData, agency: '' };
       } else {
