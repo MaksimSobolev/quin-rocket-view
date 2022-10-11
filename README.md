@@ -7,12 +7,6 @@ This app shows you all launches in date range (not precize hh:mm:ss time)
 Install dependencies with: 
 
 ```
-yarn
-```
-
-or: 
-
-```
 npm install
 ```
 
